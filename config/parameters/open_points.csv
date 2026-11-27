@@ -1,0 +1,21 @@
+﻿point_id,domain,decision_needed,priority,status,impact
+PV-01,Piscines,Confirmer la capacité exacte par créneau et par activité (MOB / immersion).,Haute,À traiter,"Écart entre groupe de 21, ≈60/h et partage du bassin."
+PV-02,Durée piscine,Arbitrer 15 min dans les RDV Nymphéa versus 20 min d’occupation organisationnelle annoncée.,Haute,À traiter,Impact direct sur la capacité.
+PV-03,Ouvertures,"Formaliser les heures de fermeture par jour pour RH, DER, VR et kiné.",Haute,À traiter,La DER et les VR ferment plus tôt; détails manquants.
+PV-04,Agents,Transformer les roulements en nombre d’agents disponibles par secteur et tranche de 15/30 min.,Haute,À traiter,Donnée nécessaire au solveur V1.
+PV-05,Chevauchements,Qualifier les 18 chevauchements minutés observés sur 5 dossiers.,Haute,À traiter,"Distinguer anomalie, tolérance et ressource collective."
+PV-06,Mutualisation,"Valider la mutualisation d’un même soin entre orientations, notamment les cas 26353 et 33257.",Haute,À traiter,Explique potentiellement l’écart de 9 soins.
+PV-07,Objectifs,"Arbitrer les poids: souhait horaire, attente, stabilité, occupation et nombre de modifications.",Haute,À traiter,Nécessaire pour la fonction objectif.
+PV-08,Vagues,Valider avec Maxime les capacités et horaires DER/VR après 2026.,Haute,À traiter,Action issue de la réunion du 16/10.
+PV-09,Déplacements,"Mesurer la matrice des temps entre zones, y compris PMR et changements de tenue.",Moyenne,À traiter,Seuls quelques ordres de grandeur ont été donnés.
+PV-10,Tolérances curiste,"Définir la tolérance au souhait horaire, l’attente gênante et l’amplitude maximale sur 18 jours.",Haute,À traiter,Convertir les préférences en pénalités mesurables.
+PV-11,Rattrapage,Définir qui autorise l’exception de deux soins supplémentaires sur une journée.,Moyenne,ok,Tracer la décision. Fait avec le médecin sur avis médical. Décision direction établissement
+PV-12,Postes actifs,Revalider la liste des unités actives/désactivées avant chaque saison.,Haute,À traiter,Le référentiel contient plusieurs unités désactivées.
+PV-13,Sans créneau,Confirmer que MODE_PLAN est l’autorité et documenter les valeurs sentinelles techniques.,Haute,À traiter,Éviter de traiter 23:59/valeurs sentinelles comme de vrais créneaux.
+PV-14,Baignoires,"Préciser si le plafond de 6 s’applique par curiste, par forfait ou par orientation et à partir de quelle date.",Haute,ok,La réle de 6 est limité par séjour
+PV-15,Vapeur,Confirmer combien de lits/douches vapeur peuvent être utilisés simultanément.,Moyenne,ok,2 normalement mais une actuellement car il y en a une en panne
+PV-16,Fermetures kiné,"Confirmer les fermetures mardi/samedi, notamment le bassin de 10 h 05 et la kiné VR collective.",Haute,À traiter,Dépend de la présence d’un ou deux kinés.
+PV-17,Soins secs,Figer la liste complète des soins considérés comme secs après térébenthine.,Moyenne,À traiter,Vapeur et cataplasme cités; liste exhaustive manquante.
+PV-18,Verrouillage,Définir le traitement d’une urgence lorsque le planning a déjà été remis au curiste.,Haute,À traiter,Règle de verrouillage à concilier avec incidents critiques.
+PV-19,Accompagnement,"Formaliser le niveau de priorité des couples, groupes et accompagnements indispensables.",Moyenne,À traiter,Distinguer confort et nécessité.
+PV-20,Fréquence modifications,Mesurer sur l’historique l’estimation d’environ 70 % de curistes modifiés.,Faible,À traiter,"Estimation orale, non encore quantifiée."

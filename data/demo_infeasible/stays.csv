@@ -1,0 +1,6 @@
+stay_id,client_ref,start_date,end_date,primary_orientation,secondary_orientation,package_primary,package_secondary,preferred_start,pmr_level,planning_communicated
+INF-001,PSEUDO-INF-001,2027-04-05,2027-04-24,RH,,RH1,,07:30,0,true
+INF-002,PSEUDO-INF-002,2027-04-05,2027-04-24,RH,,RH1,,07:30,0,true
+INF-003,PSEUDO-INF-003,2027-04-05,2027-04-24,RH,,RH1,,07:30,0,true
+INF-004,PSEUDO-INF-004,2027-04-05,2027-04-24,RH,,RH1,,07:30,0,true
+INF-005,PSEUDO-INF-005,2027-04-05,2027-04-24,RH,,RH1,,07:30,0,true

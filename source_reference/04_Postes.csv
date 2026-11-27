@@ -1,0 +1,82 @@
+﻿POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS,POSTES ET UNITÉS DE SOINS RÉFÉRENCÉS
+Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.,Extraction du dernier classeur de cartographie retrouvé. La disponibilité réelle doit être revalidée avant chaque saison.
+,,,,,,,,,
+ID poste,Nom,Type,Zone,Soins compatibles,Capacité simultanée,Durée créneau,Indisponibilité connue,Source,État qualité
+804,Gargarisme,Poste individuel,VR,0804 - Gargarisme,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+A14,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+AMB,Affections Muqueuses Buccales,Secteur / ressource collective,VR,0314 / 0325 / 0510 / 0701 - Soins AMB,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+B1D,Cabine de bain DER,Cabine individuelle,DER,0206 - Bain avec douche en immersion,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+B1RH,Cabine de bain RH,Cabine individuelle,RHU,0206 - Bain avec douche en immersion,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+B2D,Cabine de bain DER,Cabine individuelle,DER,0206 - Bain avec douche en immersion,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+B2RH,Cabine de bain RH,Cabine individuelle,RHU,0206 - Bain avec douche en immersion,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+B3D,Cabine de bain DER,Cabine individuelle,DER,0206 - Bain avec douche en immersion,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+B3RH,Cabine de bain RH,Cabine individuelle,RHU,0206 - Bain avec douche en immersion,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+B4D,Cabine de bain DER,Cabine individuelle,DER,0206 - Bain avec douche en immersion,1,20,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+B4RH,Cabine de bain RH,Cabine individuelle,RHU,0206 - Bain avec douche en immersion,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+BENF,Cabine de bain ENFANT DER,Cabine individuelle,DER,0206 - Bain avec douche en immersion,1,20,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CA01,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA02,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA03,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA04,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA05,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA06,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA07,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA08,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA09,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA10,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA11,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA12,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA13,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA14,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA15,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CA16,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+CAT1,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT2,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT3,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT4,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT5,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT6,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT7,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT8,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+CAT9,Cabine cataplasme rhumatologie,Cabine individuelle,RHU,0408 - Cataplasmes en application loc multiples,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+DERM,Secteur dermatologie,Secteur / ressource collective,DER,ENTDER et pratiques DER - à confirmer,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+DGRH,Douche Gale,Poste individuel,RHU,0301 - Douche générale,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+DJD1,Douche jet DERMATOLOGIE,Poste individuel,DER,0302 - Douche jet,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+DJR2,Douche jet RHUMATOLOGIE,Poste individuel,RHU,0302 - Douche jet,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+DJRH,Douche jet RHUMATOLOGIE,Poste individuel,RHU,0302 - Douche jet,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+DP1R,Douche pénétrante RHUMATOLOGIE,Poste individuel,RHU,0308 - Douche pénétrante,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+DP2R,Douche pénétrante RHUMATOLOGIE,Poste individuel,RHU,0308 - Douche pénétrante,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+DP3R,Douche pénétrante RHUMATOLOGIE,Poste individuel,RHU,0308 - Douche pénétrante,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+DP4R,Douche pénétrante RHUMATOLOGIE,Poste individuel,RHU,0308 - Douche pénétrante,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+DP5R,Douche pénétrante RHUMATOLOGIE,Poste individuel,RHU,0308 - Douche pénétrante,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+DP6R,Douche pénétrante RHUMATOLOGIE,Poste individuel,RHU,0308 - Douche pénétrante,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+DPRH,Cabine de bain ENFANT DER,Cabine individuelle,RHU,0206 - Bain avec douche en immersion,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+ETU2,Etuve,Poste individuel,RHU,0512 / 0513 - Étuve / Étuve locale pieds-mains,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+ETU3,Etuve,Poste individuel,RHU,0512 / 0513 - Étuve / Étuve locale pieds-mains,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+ETUV,Etuve,Poste individuel,RHU,0512 / 0513 - Étuve / Étuve locale pieds-mains,1,15,Désactivé dans Nymphéa,POSTE DE SOIN.xlsx,Désactivé dans Nymphéa
+FILI,Douche filiforme DERMATOLOGIE,Poste individuel,DER,0701 - Douche filiforme,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+KINE,Kiné respiratoire,Poste de kinésithérapie,VR,0605 / 0606 - Rééducation respiratoire individuelle / collective,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+LOCA,Pulvé locale cuir chevelu/facial DRMATOL,Poste individuel,DER,0323 - Pulvérisation externe locale,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+MOB,Piscine de mobilisation,Poste individuel,RHU,0601 - Piscine de mobilisation,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+PISC,Douche s/immersion en piscine,Poste individuel,RHU,0306 - Douche sous immersion en piscine,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+PM,Etuve Pieds-mains,Poste individuel,RHU,0513 - Étuve locale pieds/mains,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+PM2,Etuve Pieds-mains,Poste individuel,RHU,0513 - Étuve locale pieds/mains,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+PM3,Etuve Pieds-mains,Poste individuel,RHU,0513 - Étuve locale pieds/mains,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+PUL2,Douche Gale/pulvé DERMATOLOGIE,Poste individuel,DER,0301 / 0324 - Douche générale / Pulvérisation externe générale,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+PUL3,Douche Gale/pulvé DERMATOLOGIE,Poste individuel,DER,0301 / 0324 - Douche générale / Pulvérisation externe générale,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+PULV,Douche Gale,Poste individuel,DER,0301 - Douche générale,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+REPO,repos,Temps de repos,,REPOS - Temps de repos,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+RH1,Entrée rhumatologie 7h45,Entrée / créneau de démarrage,RHU,ENTRH - Entrée Rhumatologie,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+RH2,Entrée rhumatologie 9H00,Entrée / créneau de démarrage,RHU,ENTRH - Entrée Rhumatologie,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+RH3,Entrée rhumatologie 10h15,Entrée / créneau de démarrage,RHU,ENTRH - Entrée Rhumatologie,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+RH4,Entrée rhumatologie 11H30,Entrée / créneau de démarrage,RHU,ENTRH - Entrée Rhumatologie,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+RH5,Entrée rhumatologie 12h45,Entrée / créneau de démarrage,RHU,ENTRH - Entrée Rhumatologie,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+RH6,Entrée rhumatologie 17H00,Entrée / créneau de démarrage,RHU,ENTRH - Entrée Rhumatologie,1,10,,POSTE DE SOIN.xlsx,Actif à confirmer
+TH2,Douche Thérébentinée,Poste individuel,RHU,0307 - Douche térébenthinée,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+TH3,Douche Thérébentinée,Poste individuel,RHU,0307 - Douche térébenthinée,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+TH4,Douche Thérébentinée,Poste individuel,RHU,0307 - Douche térébenthinée,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+THE1,Douche Thérébentinée,Poste individuel,RHU,0307 - Douche térébenthinée,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer
+VAP,Douche de vapeur,Poste individuel,RHU,0519 - Douche de vapeur,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+VAP2,Douche de vapeur,Poste individuel,RHU,0519 - Douche de vapeur,1,15,,POSTE DE SOIN.xlsx,Actif à confirmer
+VR,Voies Respiratoires,Secteur / ressource collective,VR,Pratiques VR - à confirmer,1,20,,POSTE DE SOIN.xlsx,Actif à confirmer
+VRE,Voies Respiratoires ENFANT,Poste individuel,VRE,Pratiques VR enfant - à confirmer,1,5,,POSTE DE SOIN.xlsx,Actif à confirmer

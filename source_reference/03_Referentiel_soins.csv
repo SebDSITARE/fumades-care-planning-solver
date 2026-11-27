@@ -1,0 +1,38 @@
+﻿RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA,RÉFÉRENTIEL DES SOINS OBSERVÉS DANS L’ÉCHANTILLON NYMPHÉA
+Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.,Agrégation non nominative des 38 dossiers communs aux exports prescription et planning.
+,,,,,,,,,,,,,
+Code soin,Libellé,Nature,Thérapeutique,Qté prescrite,Dossiers prescrits,RDV planifiés,Avec ressource,Sans créneau,Repos,Durées observées (min),Nb unités,Unités observées,Source
+0206,Bain avec douche en immersion,"SOINS 2E ORI, SOINS PRINC",OUI,297,26,288,288,0,0,20,6,"B1D, B1RH, B2D, B2RH, B3D, B3RH",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0301,Douche générale,"SOINS 2E ORI, SOINS PRINC",OUI,297,20,297,297,0,0,5,2,"DGRH, PULV",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0302,Douche jet,"SOINS 2E ORI, SOINS PRINC",OUI,180,15,180,180,0,0,5,3,"DJD1, DJR2, DJRH",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0304,Douche locale au jet,"SOINS 2E ORI, SOINS PRINC",OUI,41,4,41,41,0,0,5,1,DJD1,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0306,Douche sous immersion en piscine,SOINS PRINC,OUI,174,16,174,174,0,0,15,1,PISC,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0307,Douche térébenthinée,"SOINS 2E ORI, SOINS PRINC",OUI,162,15,162,162,0,0,5,4,"TH2, TH3, TH4, THE1",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0308,Douche pénétrante,"SOINS 2E ORI, SOINS PRINC",OUI,210,20,210,210,0,0,10,4,"DP1R, DP2R, DP3R, DP4R",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0314,Douche gingivale,SOINS 2E ORI,OUI,108,6,108,108,0,0,10,1,VR,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0317,Pulvérisation Pharyngée,SOINS 2E ORI,OUI,9,1,9,9,0,0,10,1,VR,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0323,Pulvérisation externe locale,SOINS 2E ORI,OUI,30,3,30,30,0,0,5,2,"LOCA, PUL2",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0324,Pulvérisation externe générale,"SOINS 2E ORI, SOINS PRINC",OUI,137,9,137,137,0,0,5,2,"PUL2, PUL3",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0325,Pulvérisation cavité buccale,SOINS 2E ORI,OUI,90,6,90,0,90,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0327,Irrigation nasale,"SOINS 2E ORI, SOINS PRINC",OUI,351,20,351,351,0,0,10,1,VR,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0408,Cataplasmes en application loc multiples,"SOINS 2E ORI, SOINS PRINC",OUI,378,22,378,378,0,0,15,11,"CA01, CA02, CA03, CA04, CA05, CA06, CA07, CA08, CA09, CA10, CA11",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0507,Aérosol sonique,"SOINS 2E ORI, SOINS PRINC",OUI,270,17,270,0,270,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0510,Humage,"SOINS 2E ORI, SOINS PRINC",OUI,303,20,303,0,303,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0513,Etuve locale Pieds/mains,"SOINS 2E ORI, SOINS PRINC",OUI,171,13,171,171,0,0,15,3,"PM, PM2, PM3",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0519,Douche de vapeur,"SOINS 2E ORI, SOINS PRINC",OUI,64,8,64,64,0,0,15,2,"VAP, VAP2",prescription nymphea.xlsx + planning reel nymphea.xlsx
+0523,Aérosol manosonique,SOINS PRINC,OUI,9,1,9,0,9,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0601,Piscine de mobilisation,KINESITHERAPIE,OUI,189,14,189,189,0,0,15,1,MOB,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0606,Rééducation respiratoire collective,KINESITHERAPIE,OUI,126,9,126,126,0,0,15,1,KINE,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0701,Douche filiforme,SOINS PRINC,OUI,1,1,1,0,1,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0708,Proëtz,"SOINS 2E ORI, SOINS PRINC",OUI,12,4,12,0,12,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+0804,Gargarisme,"SOINS 2E ORI, SOINS PRINC",OUI,288,19,288,0,288,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+ENTDER,Entrée DERMATOLOGIE,ENTREE,NON,216,12,234,234,0,0,10,1,DERM,prescription nymphea.xlsx + planning reel nymphea.xlsx
+ENTRH1,Entrée RHUMATOLOGIE 7H45,ENTREE,NON,110,8,110,110,0,0,10,1,RH1,prescription nymphea.xlsx + planning reel nymphea.xlsx
+ENTRH2,Entrée RHUMATOLOGIE 9H,ENTREE,NON,141,8,141,141,0,0,10,1,RH2,prescription nymphea.xlsx + planning reel nymphea.xlsx
+ENTRH3,Entrée RHUMATOLOGIE 10H15,ENTREE,NON,72,4,72,72,0,0,10,1,RH3,prescription nymphea.xlsx + planning reel nymphea.xlsx
+ENTRH4,Entrée RHUMATOLOGIE 11H30,ENTREE,NON,55,4,55,55,0,0,10,1,RH4,prescription nymphea.xlsx + planning reel nymphea.xlsx
+ENTRH5,Entrée RHUMATOLOGIE 12H45,ENTREE,NON,36,2,36,36,0,0,10,1,RH5,prescription nymphea.xlsx + planning reel nymphea.xlsx
+O317,Pulvérisation Pharyngée,"SOINS 2E ORI, SOINS PRINC",OUI,297,18,297,0,297,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+REPOS,Temps de repos,REPOS,NON,756,38,756,0,0,756,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+STH,SUIVI MEDICAL 1ERE ORIENTATION,SUIVI MEDICAL,NON,69,23,69,0,69,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx
+THR,SUIVI MEDICAL 2EME ORIENTATION,SUIVI MEDICAL,NON,45,15,45,0,45,0,815,0,815,prescription nymphea.xlsx + planning reel nymphea.xlsx

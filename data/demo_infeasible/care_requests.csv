@@ -1,0 +1,6 @@
+request_id,stay_id,service_date,care_code,sector,mode_plan,preferred_start,locked_start,locked_resource,medical_override,catchup_reason
+INF-REQ-001,INF-001,2027-04-05,0206,RH,AVEC_RESSOURCE,07:30,07:30,,false,
+INF-REQ-002,INF-002,2027-04-05,0206,RH,AVEC_RESSOURCE,07:30,07:30,,false,
+INF-REQ-003,INF-003,2027-04-05,0206,RH,AVEC_RESSOURCE,07:30,07:30,,false,
+INF-REQ-004,INF-004,2027-04-05,0206,RH,AVEC_RESSOURCE,07:30,07:30,,false,
+INF-REQ-005,INF-005,2027-04-05,0206,RH,AVEC_RESSOURCE,07:30,07:30,,false,

@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "planning_day_start": "07:30",
+  "planning_day_end": "13:15",
+  "time_step_minutes": 1,
+  "max_solve_seconds": 60,
+  "num_search_workers": 8,
+  "write_to_nymphea": false,
+  "planning_requires_human_validation": true,
+  "default_output_policy": "fail_if_exists",
+  "objective_weights": {
+    "preferred_start_deviation": 100,
+    "patient_path_span": 10,
+    "terebenthine_not_last": 4,
+    "pool_pair_gap": 3
+  },
+  "rule_switches": {
+    "enforce_resource_capacity": true,
+    "enforce_patient_non_overlap": true,
+    "enforce_intersector_transitions": true,
+    "enforce_vr_irrigation_first": true,
+    "enforce_locked_appointments": true,
+    "enforce_workforce_pools": true,
+    "bath_target_max_per_stay": 6,
+    "bath_target_is_hard": false
+  }
+}

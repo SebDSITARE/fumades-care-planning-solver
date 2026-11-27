@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fumades-solver"
+version = "1.1.0"
+description = "Prototype de faisabilite du planificateur de soins des Thermes des Fumades"
+requires-python = ">=3.11"
+dependencies = ["ortools>=9.11,<10"]
+
+[project.scripts]
+fumades-solver = "fumades_solver.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

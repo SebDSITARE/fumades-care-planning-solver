@@ -1,0 +1,13 @@
+﻿MATRICE DES SOURCES ET DE LEUR PORTÉE,MATRICE DES SOURCES ET DE LEUR PORTÉE,MATRICE DES SOURCES ET DE LEUR PORTÉE,MATRICE DES SOURCES ET DE LEUR PORTÉE,MATRICE DES SOURCES ET DE LEUR PORTÉE,MATRICE DES SOURCES ET DE LEUR PORTÉE,MATRICE DES SOURCES ET DE LEUR PORTÉE
+La preuve primaire prime sur les synthèses. Les fichiers nominaux ne sont pas reproduits dans ce classeur.,La preuve primaire prime sur les synthèses. Les fichiers nominaux ne sont pas reproduits dans ce classeur.,La preuve primaire prime sur les synthèses. Les fichiers nominaux ne sont pas reproduits dans ce classeur.,La preuve primaire prime sur les synthèses. Les fichiers nominaux ne sont pas reproduits dans ce classeur.,La preuve primaire prime sur les synthèses. Les fichiers nominaux ne sont pas reproduits dans ce classeur.,La preuve primaire prime sur les synthèses. Les fichiers nominaux ne sont pas reproduits dans ce classeur.,La preuve primaire prime sur les synthèses. Les fichiers nominaux ne sont pas reproduits dans ce classeur.
+,,,,,,
+Type,Nom,Date / version,Apport,Niveau de confiance,Référence / URL,Limite
+Réunion Teams,Point planificateur de soin,16/10/2026,"Règles de vagues, prescriptions, rattrapage, enchaînement, déplacements, incidents, gouvernance",Très élevée,Transcript + synthèse Teams,Réunion récupérée avec transcript complet
+Réunion Teams,Point planif soins,16/11/2026,Réunion intermédiaire,Faible,Transcript insuffisant,Aucune règle utilisée directement
+Réunion Teams,Point projet planificateur de soin,17/11/2026,"Capacités, durées, agents, kinés, VR, fermetures",Très élevée,Transcript + synthèse Teams,Partie 2 exploitée
+Classeur,Cartographie_metier_planification_soins_Fumades.xlsx,Modifié le 16/10/2026,"Règles validées, objectifs, profils, postes",Élevée,Fichier SharePoint,Version la plus récente retrouvée
+Classeur,Memo_projet_planificateur_soins_Fumades_v2026-11-17.xlsx,17/11/2026,Consolidation projet et points ouverts,Élevée,Fichier SharePoint,Recoupé avec les sources primaires
+Export Nymphéa,selection echantaillon 2026.xlsx,2026,3 264 séjours candidats et variables de sélection,Élevée,Fichier joint,38 dossiers communs dans les exports détaillés
+Export Nymphéa,prescription nymphea.xlsx,2026,"503 lignes de prescription, forfaits, quantités, nature",Très élevée,Fichier joint,Source structurée du prescrit
+Export Nymphéa,planning reel nymphea.xlsx,2026,"5 703 rendez-vous, horaires, durées, unités et MODE_PLAN",Très élevée,Fichier joint,Source structurée du planifié
+Dossier SharePoint,ordonnances 2026,2026,Contexte de prescription et versions,Contextuelle,https://arenadour.sharepoint.com/sites/SI/Documents%20partages/Projets/Planning%20de%20soin/echantillon%202026/ordonnances%202026,Non réextrait nominativement dans ce classeur qualité
