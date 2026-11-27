@@ -1,38 +1,11 @@
-# Architecture V1.1
+# Architecture V1.1.1
 
-```text
-Export Nymphea en lecture seule
-        |
-        v
-stays.csv + care_requests.csv + locked_appointments.csv
-        |
-        v
-Validation structurelle et metier
-        |-- erreurs bloquantes -> rapport de coherence
-        v
-Modele de faisabilite OR-Tools CP-SAT
-        |-- soins avec ressource: intervalles optionnels par poste compatible
-        |-- actes SANS_CRENEAU: rattachement a la journee sans intervalle
-        |-- capacites: NoOverlap/Cumulative
-        |-- parcours: non-chevauchement + transitions inter-secteurs
-        |-- VR: irrigation nasale avant les autres actes VR a creneau
-        |-- rendez-vous verrouilles: heure/poste imposes
-        v
-planning.csv + diagnostics.json + rapport_infeasibilite.txt
-        |
-        v
-Validation humaine; aucune ecriture Nymphea
-```
+La V1.1.1 conserve le CLI V1.1 (`validate` et `solve`) et remplace l'unité minute par un créneau CP-SAT de cinq minutes.
 
-## Composants
+1. `io.py` charge les CSV V1.1/V1.1.1 et les paramètres existants. Les alias de colonnes permettent de conserver les tables V1.1.
+2. `validation.py` contrôle la fenêtre journalière, la grille, les verrouillages, les doublons et les paramètres provisoires utilisés.
+3. `model.py` applique les contraintes dures : borne `earliest_start`, `latest_start` sur le premier soin, `locked_start`, non-chevauchement patient/ressource et compatibilité ressource.
+4. L'objectif minimise d'abord l'écart du premier soin à `preferred_day_start`, puis la durée du parcours et l'attente. Une pénalité faible place le soin `0307` en fin de séance ou immédiatement avant un soin sec.
+5. `export.py` produit le planning, les indicateurs quotidiens et les diagnostics prouvables par OR-Tools.
 
-- `config/parameters`: referentiels configurables, jamais codes en dur dans le moteur.
-- `schemas`: contrat d'entree JSON Schema pour les exports Nymphea normalises.
-- `src/fumades_solver/validation.py`: controles avant calcul.
-- `src/fumades_solver/model.py`: modele CP-SAT avec hypotheses d'exigence pour extraire un noyau d'infaisabilite.
-- `src/fumades_solver/fallback.py`: ordonnanceur de secours deterministe, uniquement pour tests locaux sans OR-Tools.
-- `src/fumades_solver/export.py`: CSV/JSON/rapport texte, avec refus d'ecraser un dossier existant.
-
-## Perimetre
-
-Le modele est transversal RH, DER et VR. Les doubles orientations ne sont pas des forfaits codes en dur: elles sont representees par plusieurs secteurs dans un meme sejour et par des temps de transition configurables.
+Les fichiers `config/parameters/*` de la V1.1 ne sont pas remplacés par le patch. Si une colonne `dry_care`/`soin_sec` existe dans `care_types.csv`, elle pilote la préférence térébenthine ; à défaut, `0408` est traité comme soin sec pour compatibilité.

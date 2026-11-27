@@ -1,32 +1,34 @@
 from __future__ import annotations
-import csv, json
+
+import json
 from pathlib import Path
+from typing import Any
+
+from .io import write_csv
 
 
-def prepare_output(path: Path):
-    if path.exists():
-        raise FileExistsError(f"Refus d'ecraser le dossier existant: {path}")
-    path.mkdir(parents=True)
+PLANNING_FIELDS = [
+    "status", "service_date", "stay_id", "client_ref", "primary_orientation",
+    "secondary_orientation", "request_id", "care_code", "sector", "mode_plan",
+    "start", "end", "resource_id", "locked", "engine",
+]
+DAILY_FIELDS = [
+    "service_date", "stay_id", "client_ref", "first_start", "last_end",
+    "journey_duration_minutes", "total_wait_minutes", "preferred_day_start",
+    "desired_start_deviation_minutes",
+]
 
 
-def write_json(path: Path, obj):
-    path.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding="utf-8")
-
-
-def write_schedule(path: Path, rows: list[dict]):
-    fields=["status","service_date","stay_id","client_ref","primary_orientation","secondary_orientation","request_id","care_code","sector","mode_plan","start","end","resource_id","locked","engine"]
-    with path.open("w",newline="",encoding="utf-8-sig") as f:
-        w=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore"); w.writeheader(); w.writerows(rows)
-
-
-def write_infeasibility(path: Path, diagnostics: dict):
-    lines=["RAPPORT D'INFAISABILITE - FUMADES SOLVER V1.1","",f"Statut: {diagnostics.get('status')}",f"Moteur: {diagnostics.get('engine')}",""]
-    if diagnostics.get("validation_errors"):
-        lines.append("Erreurs de coherence:")
-        for e in diagnostics["validation_errors"]: lines.append(f"- [{e['code']}] {e['message']} | {e.get('context',{})}")
-    if diagnostics.get("unsat_core"):
-        lines += ["","Noyau d'hypotheses CP-SAT:"] + [f"- {x}" for x in diagnostics["unsat_core"]]
-    if diagnostics.get("failed_requests"):
-        lines += ["","Demandes non positionnees:"] + [f"- {x}" for x in diagnostics["failed_requests"]]
-    lines += ["","Actions conseillees:","- verifier les postes actifs et compatibilites;","- verifier les horaires sectoriels et effectifs;","- rechercher des rendez-vous verrouilles en conflit;","- ne modifier la nature d'un soin qu'avec validation medicale;","- conserver Nymphea en lecture seule."]
-    path.write_text("\n".join(lines),encoding="utf-8")
+def export_result(output_dir: str | Path, result: dict[str, Any], validation_report: dict[str, Any]) -> None:
+    root = Path(output_dir)
+    root.mkdir(parents=True, exist_ok=True)
+    write_csv(root / "planning.csv", PLANNING_FIELDS, result.get("planning", []))
+    write_csv(root / "daily_indicators.csv", DAILY_FIELDS, result.get("daily_indicators", []))
+    diagnostics = {k: v for k, v in result.items() if k not in {"planning", "daily_indicators"}}
+    diagnostics["daily_indicators_count"] = len(result.get("daily_indicators", []))
+    (root / "diagnostics.json").write_text(
+        json.dumps(diagnostics, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    (root / "validation_report.json").write_text(
+        json.dumps(validation_report, ensure_ascii=False, indent=2), encoding="utf-8"
+    )

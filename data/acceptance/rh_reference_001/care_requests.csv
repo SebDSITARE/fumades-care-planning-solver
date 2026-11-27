@@ -1,5 +1,5 @@
 request_id,stay_id,service_date,care_code,sector,mode_plan,preferred_start,locked_start,locked_resource,medical_override,catchup_reason
-ACC-REQ-001,ACC-RH-001,2027-04-05,0408,RH,AVEC_RESSOURCE,07:45,,,false,
+ACC-REQ-001,ACC-RH-001,2027-04-05,0408,RH,AVEC_RESSOURCE,,,,false,
 ACC-REQ-002,ACC-RH-001,2027-04-05,0206,RH,AVEC_RESSOURCE,,,,false,
 ACC-REQ-003,ACC-RH-001,2027-04-05,0513,RH,AVEC_RESSOURCE,,,,false,
 ACC-REQ-004,ACC-RH-001,2027-04-05,0308,RH,AVEC_RESSOURCE,,,,false,

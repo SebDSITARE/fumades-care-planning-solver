@@ -1,25 +1,32 @@
-# Contrat d'entree normalise
+# Contrat d'entrée V1.1.1
 
 ## `stays.csv`
 
-Une ligne par dossier de cure non nominatif ou pseudonymise.
+Champs obligatoires V1.1.1 :
 
-Champs principaux: `stay_id`, `client_ref`, `start_date`, `end_date`, `primary_orientation`, `secondary_orientation`, `package_primary`, `package_secondary`, `preferred_start`, `pmr_level`, `planning_communicated`.
+- `earliest_start` : borne dure. Par défaut, aucun soin avec créneau ne peut commencer avant cette heure ;
+- `preferred_day_start` : heure souhaitée du **premier soin quotidien** ;
+- `latest_start` : heure limite du premier soin quotidien.
+
+Ces trois valeurs utilisent `HH:MM` sur une grille de cinq minutes et doivent respecter :
+
+```text
+earliest_start <= preferred_day_start <= latest_start
+```
+
+Compatibilité ascendante : si ces champs sont absents, l'ancien `preferred_start` du séjour initialise `earliest_start` et `preferred_day_start`. `latest_start` vaut alors `12:00`. Cette conversion doit rester transitoire ; les nouveaux exports Nymphéa doivent fournir les trois champs explicites.
 
 ## `care_requests.csv`
 
-Une ligne par occurrence de soin a planifier pour une date donnee.
+`locked_start` reste la contrainte dure d'une occurrence imposée. Il doit appartenir à la grille de cinq minutes, ne peut pas précéder `earliest_start` et, avec `locked_resource`, fixe aussi la ressource. Le `preferred_start` d'une occurrence reste une préférence souple et ne remplace pas l'ancrage journalier du séjour.
 
-Champs: `request_id`, `stay_id`, `service_date`, `care_code`, `sector`, `mode_plan`, `preferred_start`, `locked_start`, `locked_resource`, `medical_override`, `catchup_reason`.
+## Grille
 
-`mode_plan` est autoritaire:
+Le modèle travaille en créneaux de cinq minutes. Une durée non multiple de cinq minutes est arrondie au créneau supérieur pour éviter de sous-estimer l'occupation : par exemple six minutes occupent dix minutes de grille.
 
-- `AVEC_RESSOURCE`: reserve un poste et une duree;
-- `SANS_CRENEAU`: rattache l'acte a la journee sans reserver de poste;
-- `REPOS`: acte technique/non therapeutique.
+## Sorties
 
-Les codes `ENTRH*`, `ENTDER`, `REPOS`, `STH` et `THR` ne sont pas comptes comme soins therapeutiques.
-
-## Nymphéa
-
-Les identifiants a conserver lors de la normalisation sont `CD_DOSSIER`, `CD_CLIENT` et `CD_RDVCLI`. Le module fourni ne lit que des fichiers d'export; il ne contient aucun connecteur d'ecriture.
+- `planning.csv` : planning par occurrence ;
+- `daily_indicators.csv` : début, fin, durée du parcours, attente totale et écart à `preferred_day_start` par séjour et par jour ;
+- `diagnostics.json` : statut, objectif, borne, gap absolu/relatif, branches et conflits ;
+- `validation_report.json` : erreurs et avertissements, avec `PROVISIONAL_PARAMETERS` limité aux codes réellement utilisés.
