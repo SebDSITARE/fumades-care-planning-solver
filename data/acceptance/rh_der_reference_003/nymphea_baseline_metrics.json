@@ -1,0 +1,72 @@
+{
+  "case_id": "RH-DER-ACC-003",
+  "metrics": {
+    "prescribed_care_count": 72,
+    "positioned_care_count": 66,
+    "unpositioned_care_count": 6,
+    "unpositioned_request_ids": [
+      "RHDER3-T-002",
+      "RHDER3-T-006",
+      "RHDER3-T-010",
+      "RHDER3-T-026",
+      "RHDER3-T-030",
+      "RHDER3-T-034"
+    ],
+    "manual_additions_needed": 6,
+    "delayed_or_rescheduled_care_count": 6,
+    "vapor_end_of_cure_reports": 6,
+    "unpositioned_general_showers": 6,
+    "avoidable_rh_der_rh_returns": 6,
+    "rh_der_rh_return_days": [
+      "2027-06-21",
+      "2027-06-22",
+      "2027-06-23",
+      "2027-06-24",
+      "2027-06-25",
+      "2027-06-26"
+    ],
+    "avoidable_sector_returns": 6,
+    "sector_return_days": [
+      "2027-06-21",
+      "2027-06-22",
+      "2027-06-23",
+      "2027-06-24",
+      "2027-06-25",
+      "2027-06-26"
+    ],
+    "intersector_moves": 24,
+    "prescription_coverage_percent": 91.67,
+    "prescription_exact_day_percent": 83.33,
+    "duplicate_positioned_request_count": 0,
+    "extra_positioned_request_count": 0,
+    "prescribed_by_care": {
+      "0301": 18,
+      "0324": 18,
+      "0408": 18,
+      "0513": 12,
+      "0519": 6
+    },
+    "positioned_by_care": {
+      "0301": 12,
+      "0324": 18,
+      "0408": 18,
+      "0513": 12,
+      "0519": 6
+    },
+    "days_with_positioned_care": 18,
+    "preferred_start_tolerance_minutes": 5,
+    "days_starting_within_tolerance": 18,
+    "start_time_compliance_percent": 100.0,
+    "expected_start_sector": "RH",
+    "days_starting_in_expected_sector": 18,
+    "start_sector_compliance_percent": 100.0,
+    "mean_start_deviation_minutes": 0,
+    "max_start_deviation_minutes": 0,
+    "total_wait_minutes": 330,
+    "mean_wait_minutes": 18.33,
+    "max_wait_minutes": 30,
+    "total_path_span_minutes": 1020,
+    "mean_path_span_minutes": 56.67,
+    "max_path_span_minutes": 85
+  }
+}

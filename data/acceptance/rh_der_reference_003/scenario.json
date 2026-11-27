@@ -1,0 +1,80 @@
+{
+  "case_id": "RH-DER-ACC-003",
+  "description": "Cas pseudonymise reproduisant une vague RH 07:45 avec double orientation RH + DER, saturation de la douche generale et indisponibilite du lit vapeur dans la fenetre RH.",
+  "start_date": "2027-06-07",
+  "treatment_day_count": 18,
+  "excluded_weekdays": [6],
+  "target": {
+    "stay_id": "ACC-RHDER-003",
+    "client_ref": "PSEUDO-RHDER-003",
+    "primary_orientation": "RH",
+    "secondary_orientation": "DER",
+    "package_primary": "RH1",
+    "package_secondary": "DER1",
+    "earliest_start": "07:45",
+    "preferred_day_start": "07:45",
+    "latest_start": "08:00",
+    "wave_id": "WAVE-RH-0745",
+    "daily_cares": [
+      {"care_code": "0408", "sector": "RH", "mode_plan": "AVEC_RESSOURCE"},
+      {"care_code": "0301", "sector": "DER", "mode_plan": "AVEC_RESSOURCE"},
+      {"care_code": "0324", "sector": "DER", "mode_plan": "AVEC_RESSOURCE"}
+    ],
+    "alternate_cares": {
+      "0519": {"sector": "RH", "mode_plan": "AVEC_RESSOURCE", "day_indices": [0, 1, 2, 6, 7, 8]},
+      "0513": {"sector": "RH", "mode_plan": "AVEC_RESSOURCE", "all_other_days": true}
+    }
+  },
+  "constraints_to_reproduce": {
+    "rh_wave_window": {"start": "07:45", "end": "09:00"},
+    "general_shower": {
+      "care_code": "0301",
+      "sector": "DER",
+      "resource_id": "DER_GENERAL",
+      "slot_minutes": 5,
+      "saturated_day_indices": [0, 1, 2, 6, 7, 8],
+      "saturation_start": "07:45",
+      "saturation_end": "09:00"
+    },
+    "steam_bed": {
+      "care_code": "0519",
+      "sector": "RH",
+      "resource_id": "VAP",
+      "slot_minutes": 15,
+      "unavailable_day_indices": [0, 1, 2, 6, 7, 8],
+      "unavailable_start": "07:45",
+      "unavailable_end": "09:00",
+      "manual_report_target_day_indices": [12, 13, 14, 15, 16, 17]
+    }
+  },
+  "baseline_schedule": {
+    "normal_times": {
+      "0408": ["07:45", "08:00", "CA01"],
+      "0513": ["08:05", "08:20", "PM"],
+      "0324": ["08:25", "08:30", "PULV_DER_1"],
+      "0301": ["08:35", "08:40", "DER_GENERAL"]
+    },
+    "crowded_day_times": {
+      "0408": ["07:45", "08:00", "CA01"],
+      "0324": ["08:10", "08:15", "PULV_DER_1"]
+    },
+    "end_of_cure_times": {
+      "0408": ["07:45", "08:00", "CA01"],
+      "0324": ["08:10", "08:15", "PULV_DER_1"],
+      "0301": ["08:20", "08:25", "DER_GENERAL"],
+      "0513": ["08:35", "08:50", "PM"],
+      "0519": ["08:55", "09:10", "VAP"]
+    }
+  },
+  "metrics": {
+    "preferred_start_tolerance_minutes": 5,
+    "expected_start_sector": "RH",
+    "target_sector_return_pattern": ["RH", "DER", "RH"],
+    "end_of_cure_day_count": 6
+  },
+  "safety": {
+    "pseudonymized": true,
+    "write_to_nymphea": false,
+    "planning_requires_human_validation": true
+  }
+}
