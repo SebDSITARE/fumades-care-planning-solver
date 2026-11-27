@@ -52,4 +52,4 @@ outputs/*
 # Temporaires Office / Windows
 *.tmp
 *.bak
-~$*
+~$**.egg-info/
