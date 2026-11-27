@@ -90,3 +90,7 @@ PYTHONPATH=src python -m fumades_solver.cli solve \
 5. Faire valider le planning par Marie-Laure/qualite.
 6. Comparer au planning Nymphea sans ecrire dans Nymphea.
 7. Seulement ensuite ajouter l'optimisation multi-objectifs et une API de recette.
+
+## V1.2.0 — cas de recette couple n°2
+
+La V1.2.0 ajoute un cas couple intégralement pseudonymisé, des objectifs souples de synchronisation et l'export `couple_indicators.csv`. Elle ne contient aucun connecteur d'écriture Nymphéa. Voir `docs/ACCEPTANCE_COUPLE_002.md`.

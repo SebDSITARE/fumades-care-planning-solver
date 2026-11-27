@@ -1,0 +1,3 @@
+stay_id,client_ref,start_date,end_date,primary_orientation,secondary_orientation,package_primary,package_secondary,earliest_start,preferred_day_start,latest_start,preferred_start,pmr_level,planning_communicated,couple_id,couple_role,wave_id
+ACC-CPL2-A,PSEUDO-CPL2-A,2027-05-03,2027-05-22,RH,,RH1,,07:45,08:00,08:30,08:00,0,false,CPL-ACC-002,A,WAVE-0800
+ACC-CPL2-B,PSEUDO-CPL2-B,2027-05-03,2027-05-22,RH,,RH1,,07:45,08:00,08:30,08:00,0,false,CPL-ACC-002,B,WAVE-0800

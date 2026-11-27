@@ -264,3 +264,147 @@ def write_csv(path: Path, fieldnames: Iterable[str], rows: Iterable[dict[str, An
         writer = csv.DictWriter(handle, fieldnames=list(fieldnames), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
+
+# Public compatibility helper used by the V1.2.0 indicators.
+
+
+# --- V1.2.0 autonomous io compatibility API ---
+
+def minutes(value):
+    """Convert ``HH:MM`` or an integer count to minutes.
+
+    Integer inputs are returned unchanged. For compatibility with earlier
+    patch output, time/datetime objects, numeric strings and values beginning
+    with an ISO date or containing seconds are also accepted.
+    """
+    if isinstance(value, bool):
+        raise ValueError("a boolean is not a valid time")
+    if isinstance(value, int):
+        return value
+    if hasattr(value, "hour") and hasattr(value, "minute"):
+        return int(value.hour) * 60 + int(value.minute)
+    if value is None:
+        raise ValueError("time value is required")
+    text = str(value).strip()
+    if not text:
+        raise ValueError("time value is required")
+    if text.lstrip("+-").isdigit():
+        return int(text)
+    clock = text.rsplit("T", 1)[-1].rsplit(" ", 1)[-1]
+    parts = clock.split(":")
+    if len(parts) < 2 or not parts[0].isdigit() or not parts[1].isdigit():
+        raise ValueError(f"invalid time value: {value!r}")
+    hour, minute = int(parts[0]), int(parts[1])
+    if not 0 <= hour <= 23 or not 0 <= minute <= 59:
+        raise ValueError(f"invalid time value: {value!r}")
+    return hour * 60 + minute
+
+
+def hhmm(value):
+    """Convert integer minutes to a zero-padded 24-hour ``HH:MM`` string."""
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"expected integer minutes, got {value!r}")
+    value %= 24 * 60
+    return f"{value // 60:02d}:{value % 60:02d}"
+
+
+def _v120_read_rows(path):
+    """Read one CSV while reusing the branch's existing ``_rows`` loader."""
+    path = Path(path)
+    existing_loader = globals().get("_rows")
+    if callable(existing_loader):
+        return existing_loader(path)
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        return list(csv.DictReader(handle))
+
+
+def _v120_parameter_table(root, filenames, required_columns, label):
+    """Load a named table, with a header-based fallback for legacy filenames."""
+    root = Path(root)
+    candidates = []
+    for filename in filenames:
+        path = root / filename
+        if path.is_file() and path not in candidates:
+            candidates.append(path)
+    for path in sorted(root.glob("*.csv")):
+        if path not in candidates:
+            candidates.append(path)
+
+    required = set(required_columns)
+    for path in candidates:
+        rows = _v120_read_rows(path)
+        if rows and required.issubset(rows[0]):
+            return rows
+        if not rows and path.is_file():
+            with path.open(newline="", encoding="utf-8-sig") as handle:
+                fields = set((csv.DictReader(handle).fieldnames or ()))
+            if required.issubset(fields):
+                return []
+    raise FileNotFoundError(
+        f"cannot locate {label} in {root}; required columns: {sorted(required)!r}"
+    )
+
+
+def load_problem(input_dir, parameter_dir, config_path):
+    """Load the raw dictionary problem consumed by V1.2 validation and solvers.
+
+    The public signature matches ``cli.py`` and both acceptance-test suites.
+    Existing CSV loading behaviour is reused through ``_rows``. Parameter
+    tables are selected by their canonical filename first and by required
+    headers second, allowing the stable V1.1.1 filenames to remain unchanged.
+    """
+    input_root = Path(input_dir)
+    parameter_root = Path(parameter_dir)
+    config_file = Path(config_path)
+
+    stays = _v120_read_rows(input_root / "stays.csv")
+    requests = _v120_read_rows(input_root / "care_requests.csv")
+    if not stays:
+        raise FileNotFoundError(f"missing or empty stays.csv in {input_root}")
+    if not requests:
+        raise FileNotFoundError(f"missing or empty care_requests.csv in {input_root}")
+    if not config_file.is_file():
+        raise FileNotFoundError(f"missing solver configuration: {config_file}")
+    config = json.loads(config_file.read_text(encoding="utf-8"))
+    if not isinstance(config, dict):
+        raise ValueError(f"solver configuration must be a JSON object: {config_file}")
+
+    return {
+        "stays": stays,
+        "requests": requests,
+        "care_types": _v120_parameter_table(
+            parameter_root,
+            ("care_types.csv", "types_soins.csv"),
+            ("care_code", "mode_plan", "allowed_sectors", "occupancy_minutes"),
+            "care types",
+        ),
+        "resources": _v120_parameter_table(
+            parameter_root,
+            ("resources.csv", "ressources.csv"),
+            ("resource_id", "capacity", "open_start", "open_end"),
+            "resources",
+        ),
+        "compatibilities": _v120_parameter_table(
+            parameter_root,
+            ("care_resource_compatibility.csv", "compatibilities.csv", "compatibilites.csv"),
+            ("care_code", "sector", "resource_id"),
+            "care/resource compatibilities",
+        ),
+        "transitions": _v120_parameter_table(
+            parameter_root,
+            ("sector_transitions.csv", "transitions.csv", "transition_times.csv"),
+            ("from_sector", "to_sector", "minutes"),
+            "sector transitions",
+        ),
+        "workforce": _v120_parameter_table(
+            parameter_root,
+            ("workforce_pools.csv", "workforce.csv", "staff_pools.csv"),
+            ("pool_id", "capacity"),
+            "workforce pools",
+        ),
+        "config": config,
+    }
+
+# --- end V1.2.0 autonomous io compatibility API ---

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://fumades.example/schemas/nymphea-input-v1.1.1.json",
-  "title": "Fumades Nymphea planning input V1.1.1",
+  "$id": "https://thermes-fumades.local/schemas/nymphea-input-v1.2.json",
+  "title": "Entree normalisee Nymphea - Solveur Fumades V1.2",
   "type": "object",
   "required": ["stays", "care_requests"],
   "properties": {
@@ -9,28 +9,25 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": [
-          "stay_id", "client_ref", "start_date", "end_date",
-          "primary_orientation", "earliest_start", "preferred_day_start", "latest_start"
-        ],
+        "required": ["stay_id", "client_ref", "start_date", "end_date", "primary_orientation", "package_primary"],
         "properties": {
           "stay_id": {"type": "string", "minLength": 1},
-          "client_ref": {"type": "string", "minLength": 1},
+          "client_ref": {"type": "string", "description": "Identifiant pseudonymise; ne jamais utiliser le nom du curiste"},
           "start_date": {"type": "string", "format": "date"},
           "end_date": {"type": "string", "format": "date"},
-          "primary_orientation": {"type": "string", "minLength": 1},
-          "secondary_orientation": {"type": "string"},
+          "primary_orientation": {"enum": ["RH", "DER", "VR"]},
+          "secondary_orientation": {"enum": ["", "RH", "DER", "VR"]},
           "package_primary": {"type": "string"},
           "package_secondary": {"type": "string"},
-          "earliest_start": {"$ref": "#/$defs/gridTime"},
-          "preferred_day_start": {"$ref": "#/$defs/gridTime"},
-          "latest_start": {"$ref": "#/$defs/gridTime"},
-          "preferred_start": {
-            "description": "Champ V1.1 accepte uniquement pour compatibilite ascendante",
-            "$ref": "#/$defs/gridTime"
-          },
-          "pmr_level": {"type": "integer", "minimum": 0},
-          "planning_communicated": {"type": "boolean"}
+          "earliest_start": {"type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"},
+          "preferred_day_start": {"type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"},
+          "latest_start": {"type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"},
+          "preferred_start": {"type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"},
+          "pmr_level": {"type": "string"},
+          "planning_communicated": {"type": "boolean"},
+          "couple_id": {"type": "string", "description": "Identifiant pseudonymise commun aux deux sejours"},
+          "couple_role": {"enum": ["", "A", "B"]},
+          "wave_id": {"type": "string"}
         }
       }
     },
@@ -40,25 +37,22 @@
         "type": "object",
         "required": ["request_id", "stay_id", "service_date", "care_code", "sector", "mode_plan"],
         "properties": {
-          "request_id": {"type": "string", "minLength": 1},
-          "stay_id": {"type": "string", "minLength": 1},
+          "request_id": {"type": "string"},
+          "stay_id": {"type": "string"},
           "service_date": {"type": "string", "format": "date"},
-          "care_code": {"type": "string", "minLength": 1},
-          "sector": {"type": "string", "minLength": 1},
-          "mode_plan": {"enum": ["AVEC_RESSOURCE", "SANS_CRENEAU"]},
-          "preferred_start": {"oneOf": [{"$ref": "#/$defs/gridTime"}, {"type": "null"}]},
-          "locked_start": {"oneOf": [{"$ref": "#/$defs/gridTime"}, {"type": "null"}]},
-          "locked_resource": {"type": ["string", "null"]},
+          "care_code": {"type": "string"},
+          "sector": {"enum": ["RH", "DER", "VR"]},
+          "mode_plan": {"enum": ["AVEC_RESSOURCE", "SANS_CRENEAU", "REPOS", "ENTREE"]},
+          "preferred_start": {"type": "string"},
+          "locked_start": {"type": "string"},
+          "locked_resource": {"type": "string"},
           "medical_override": {"type": "boolean"},
-          "catchup_reason": {"type": ["string", "null"]}
+          "catchup_reason": {"type": "string"},
+          "couple_sync_group": {"type": "string", "description": "Identifiant pseudonymise d'une paire de soins a rapprocher"},
+          "couple_sync_priority": {"enum": ["", "NONE", "PREFERRED", "COLLECTIVE"]}
         }
       }
     }
   },
-  "$defs": {
-    "gridTime": {
-      "type": "string",
-      "pattern": "^(?:[01]\\d|2[0-3]):(?:00|05|10|15|20|25|30|35|40|45|50|55)$"
-    }
-  }
+  "additionalProperties": false
 }

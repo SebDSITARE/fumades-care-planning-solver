@@ -5,64 +5,71 @@ import json
 import sys
 from pathlib import Path
 
-from .export import export_result
+from .export import (
+    prepare_output,
+    write_couple_indicators,
+    write_daily_indicators,
+    write_infeasibility,
+    write_json,
+    write_schedule,
+)
 from .fallback import solve_fallback
-from .io import load_input, load_parameters
-from .model import solve
-from .validation import validate
+from .indicators import compute_couple_indicators, compute_daily_indicators
+from .io import load_problem
+from .model import solve_cp_sat
+from .validation import errors, validate_problem
 
 
-def _common(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument("--input-dir", required=True)
-    parser.add_argument("--parameter-dir", required=True)
-    parser.add_argument("--config", default="config/solver.json")
-
-
-def build_parser() -> argparse.ArgumentParser:
+def build_parser():
     parser = argparse.ArgumentParser(prog="fumades-solver")
-    subparsers = parser.add_subparsers(dest="command", required=True)
-    validate_parser = subparsers.add_parser("validate")
-    _common(validate_parser)
-    solve_parser = subparsers.add_parser("solve")
-    _common(solve_parser)
-    solve_parser.add_argument("--output-dir", required=True)
-    solve_parser.add_argument("--engine", choices=("cp-sat", "fallback"), default="cp-sat")
+    sub = parser.add_subparsers(dest="command", required=True)
+    for name in ("validate", "solve"):
+        command = sub.add_parser(name)
+        command.add_argument("--input-dir", type=Path, required=True)
+        command.add_argument("--parameter-dir", type=Path, required=True)
+        command.add_argument("--config", type=Path, default=Path("config/solver.json"))
+        if name == "solve":
+            command.add_argument("--output-dir", type=Path, required=True)
+            command.add_argument("--engine", choices=("cp-sat", "fallback"), default="cp-sat")
     return parser
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv=None):
     args = build_parser().parse_args(argv)
-    try:
-        stays, requests = load_input(args.input_dir)
-        parameters = load_parameters(args.parameter_dir, args.config)
-        report = validate(stays, requests, parameters)
-        if args.command == "validate":
-            print(json.dumps(report, ensure_ascii=False, indent=2))
-            return 0 if report["status"] == "VALID" else 2
-        if report["status"] != "VALID":
-            Path(args.output_dir).mkdir(parents=True, exist_ok=True)
-            invalid = {
-                "status": "INVALID",
-                "engine": args.engine,
-                "validation_warnings": [i for i in report["issues"] if i["level"] == "WARNING"],
-                "planning": [],
-                "daily_indicators": [],
-            }
-            export_result(args.output_dir, invalid, report)
-            print(json.dumps(invalid, ensure_ascii=False, indent=2))
-            return 2
-        warnings = [issue for issue in report["issues"] if issue["level"] == "WARNING"]
-        if args.engine == "fallback":
-            result = solve_fallback(stays, requests, parameters, warnings)
-        else:
-            result = solve(stays, requests, parameters, warnings, engine="cp-sat")
-        export_result(args.output_dir, result, report)
-        console = {k: v for k, v in result.items() if k not in {"planning", "daily_indicators"}}
-        print(json.dumps(console, ensure_ascii=False, indent=2))
-        return 0 if result["status"] in {"FEASIBLE", "OPTIMAL"} else 3
-    except (OSError, ValueError, KeyError) as exc:
-        print(json.dumps({"status": "ERROR", "message": str(exc)}, ensure_ascii=False, indent=2))
-        return 1
+    problem = load_problem(args.input_dir, args.parameter_dir, args.config)
+    issues = validate_problem(problem)
+    blocking = errors(issues)
+    if args.command == "validate":
+        print(json.dumps({"status": "INVALID" if blocking else "VALID", "issues": issues}, ensure_ascii=False, indent=2))
+        return 2 if blocking else 0
+
+    prepare_output(args.output_dir)
+    write_json(args.output_dir / "validation_report.json", {"status": "INVALID" if blocking else "VALID", "issues": issues})
+    if blocking:
+        diagnostics = {"status": "INVALID_INPUT", "engine": args.engine, "validation_errors": blocking}
+        write_json(args.output_dir / "diagnostics.json", diagnostics)
+        write_infeasibility(args.output_dir / "rapport_infeasibilite.txt", diagnostics)
+        print(json.dumps(diagnostics, ensure_ascii=False, indent=2))
+        return 2
+
+    rows, diagnostics = solve_cp_sat(problem) if args.engine == "cp-sat" else solve_fallback(problem)
+    diagnostics["validation_warnings"] = [issue for issue in issues if issue["level"] == "WARNING"]
+    if rows:
+        daily = compute_daily_indicators(rows, problem["stays"])
+        tolerance = int(problem["config"].get("couple_sync_tolerance_minutes", 5))
+        couple = compute_couple_indicators(rows, problem["stays"], tolerance)
+        diagnostics["daily_indicator_rows"] = len(daily)
+        diagnostics["couple_indicator_rows"] = len(couple)
+        diagnostics["couple_days_within_tolerance"] = sum(bool(row["within_tolerance"]) for row in couple)
+        write_schedule(args.output_dir / "planning.csv", rows)
+        write_daily_indicators(args.output_dir / "daily_indicators.csv", daily)
+        if couple:
+            write_couple_indicators(args.output_dir / "couple_indicators.csv", couple)
+    else:
+        write_infeasibility(args.output_dir / "rapport_infeasibilite.txt", diagnostics)
+    write_json(args.output_dir / "diagnostics.json", diagnostics)
+    print(json.dumps(diagnostics, ensure_ascii=False, indent=2))
+    return 0 if rows else 3
 
 
 if __name__ == "__main__":
