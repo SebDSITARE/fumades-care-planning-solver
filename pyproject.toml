@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fumades-solver"
-version = "1.1.0"
+version = "1.1.1"
 description = "Prototype de faisabilite du planificateur de soins des Thermes des Fumades"
 requires-python = ">=3.11"
 dependencies = ["ortools>=9.11,<10"]
